@@ -20,6 +20,17 @@ public class Main {
 
         List<Map<String, String>> listaDeFilmes = parse.parse(body);
 
-        System.out.println(listaDeFilmes.get(0));
+        for (Map<String,String> filme : listaDeFilmes) {
+            System.out.println(filme.get("title"));
+            System.out.println(filme.get("imDbRating"));
+
+            Double rating = Double.parseDouble(filme.get("imDbRating"));
+
+            for (int i = 0; i < rating.intValue(); i++){
+                System.out.print("\u2B50");
+            }
+
+            System.out.println("\n");
+        }
     }
 }
