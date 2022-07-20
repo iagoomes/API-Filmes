@@ -1,5 +1,7 @@
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -21,16 +23,19 @@ public class Main {
         List<Map<String, String>> listaDeFilmes = parse.parse(body);
 
         for (Map<String,String> filme : listaDeFilmes) {
-            System.out.println(filme.get("title"));
-            System.out.println(filme.get("imDbRating"));
 
-            Double rating = Double.parseDouble(filme.get("imDbRating"));
+            String urlImagem = filme.get("image");
+            String nomeFilme = filme.get("title");
 
-            for (int i = 0; i < rating.intValue(); i++){
-                System.out.print("\u2B50");
-            }
 
-            System.out.println("\n");
+            InputStream inputStream= new URL(urlImagem).openStream();
+            String nomeArquivo = nomeFilme + ".png";
+
+            GeradorDeFigurinhas.criar(inputStream, nomeArquivo);
+
+            System.out.println(nomeFilme);
+            System.out.println();
+
         }
     }
 }
