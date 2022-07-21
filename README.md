@@ -21,7 +21,7 @@ Apartir dessa API, podemos pegar a foto da capa do filme e gerar stickers(figuri
 
 ## :hammer: Funcionalidades do projeto
 
-- `Funcionalidade 1`: Leitura da imagem.
+- `Funcionalidade 1`: Consumir uma API que forneça imagens.
 - `Funcionalidade 2`: Criar nova imagem em memória com transparência e com nova dimensão.
 - `Funcionalidade 3`: Escrever uma mensagem na imagem.
-- `Funcionalidade 4`: Escrever nova imagem em um arquivo.
+- `Funcionalidade 4`: Apartir dessa imagem criada em memória, aplicaremos as alterações na imagem consumida da API.
